@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+<body>
+    <p id="hello-world">Hello World</p>
+    <button id="btn-hw">Click here to change the top html content</button>
+    <br>
+    <a id="link" href="https://google.com">Link with preventDefault</a>
+    <p class="hide">Mouse to hide classes</p>
+    <p class="hide">Mouse to hide classes</p>
+
+    <script src="Selector.js"></script>
+    <script>
+        S('#btn-hw').click(function(){
+            S('#hello-world').html('Hello Guys')
+        })
+
+        S('.hide').hover(function(){
+            S(this).hide()            
+        })
+
+        S('#link').click(function(e) {
+            e.preventDefault();
+            alert('you will redirect');
+            window.open(S(this).attr('href'), '_blank')
+        })
+    </script>
+</body>
+</html>
